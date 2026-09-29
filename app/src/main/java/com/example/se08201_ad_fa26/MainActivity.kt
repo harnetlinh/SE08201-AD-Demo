@@ -1,5 +1,6 @@
 package com.example.se08201_ad_fa26
 
+import Student
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -114,25 +115,17 @@ class MainActivity : AppCompatActivity() {
             }
 
             if (isValid){
-                showInfor(name,studentid, major, age, academicYear, ckbJoinClub.isChecked);
+                val theStudent = Student(name,major,studentid,academicYear,wantsJoinClub,birthYear);
+                showInfor(theStudent);
             }
         }
-
     }
 
-    fun showInfor(name: String, studentid: String, major: String, age : Int, academicYear: Int, wantJoinClub: Boolean){
-        var stringJoinClub = "";
-        if(wantJoinClub)
-        {
-            stringJoinClub = "có";
-        }else{
-            stringJoinClub = "không";
-        }
-
-        val message = "Xin chào $name, mã sinh viên $studentid, $age tuổi, hiện đang là sinh viên năm $academicYear ngành $major \n " +
-                "Tôi $stringJoinClub muốn tham gia Club IT";
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun showInfor(theStudent: Student){
+        val message = theStudent.showInfor();
         AlertDialog.Builder(this)
-            .setTitle("Thông báo $name!! CHÚ Ý!!!")
+            .setTitle("Thông báo ${theStudent.name}!! CHÚ Ý!!!")
             .setMessage(message).show();
     }
 }
