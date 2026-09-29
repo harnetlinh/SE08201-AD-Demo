@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
     fun showInfor(theStudent: Student){
         val message = theStudent.showInfor();
         AlertDialog.Builder(this)
-            .setTitle("Thông báo ${theStudent.name}!! CHÚ Ý!!!")
+            .setTitle("Thông báo ${theStudent.name}!! CHÚ Ý!!! Bổ sung 444444444")
             .setMessage(message).show();
     }
 }
