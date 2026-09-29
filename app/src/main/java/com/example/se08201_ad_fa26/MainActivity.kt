@@ -132,10 +132,7 @@ class MainActivity : AppCompatActivity() {
         val message = "Xin chào $name, mã sinh viên $studentid, $age tuổi, hiện đang là sinh viên năm $academicYear ngành $major \n " +
                 "Tôi $stringJoinClub muốn tham gia Club IT";
         AlertDialog.Builder(this)
-            .setTitle("Thông báo sinh viên $name")
+            .setTitle("Thông báo $name!! CHÚ Ý!!!")
             .setMessage(message).show();
     }
-
-
-
 }
